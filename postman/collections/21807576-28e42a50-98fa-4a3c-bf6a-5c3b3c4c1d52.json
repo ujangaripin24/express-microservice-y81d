@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "21807576-28e42a50-98fa-4a3c-bf6a-5c3b3c4c1d52",
+		"name": "express-microservice-y81d",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[user-service] create user",
+			"id": "21807576-d56eac4d-56e0-4c55-906f-ab6ed90e32a5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user8050\",\n    \"email\": \"user8050@gmail.com\",\n    \"password\": \"123456789\",\n    \"confPassword\": \"123456789\",\n    \"role\": \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8050/api/v1/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8050",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
