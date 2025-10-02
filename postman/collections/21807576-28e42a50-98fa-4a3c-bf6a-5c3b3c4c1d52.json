@@ -137,6 +137,51 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "[product-service] create product",
+			"id": "21807576-01ac52e6-21b0-40b6-bb50-4e1bf88fc2a9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMTE5ZWJlOWYtOWMwMi00YThiLTgyZWEtMGUxNjViYTU3ZWFhIiwiZW1haWwiOiJ1c2VyMDAxQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU5NDA0MTAyLCJleHAiOjE3NTk0MDc3MDJ9.a88qKTxn6tWoimGA-cwtcJvhOZM-iN_IhWeBi2hvXo8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"product 70\",\n    \"price\": \"78200\",\n    \"description\": \"detail product 70\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8050/api/v1/product/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8050",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"create"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
