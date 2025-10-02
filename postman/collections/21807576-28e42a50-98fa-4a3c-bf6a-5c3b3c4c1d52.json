@@ -74,6 +74,42 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "[auth-service] get provile",
+			"id": "21807576-6bc1bb88-c7a4-48c0-b881-30035bfde92e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMTE5ZWJlOWYtOWMwMi00YThiLTgyZWEtMGUxNjViYTU3ZWFhIiwiZW1haWwiOiJ1c2VyMDAxQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU5NDA0MTAyLCJleHAiOjE3NTk0MDc3MDJ9.a88qKTxn6tWoimGA-cwtcJvhOZM-iN_IhWeBi2hvXo8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8050/api/v1/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8050",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
