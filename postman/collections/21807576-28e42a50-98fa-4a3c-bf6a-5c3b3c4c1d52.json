@@ -110,6 +110,33 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "[user-service] get detail users",
+			"id": "21807576-2a22b179-d110-4ec3-9899-7d8a5061307a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8050/api/v1/users/detail/119ebe9f-9c02-4a8b-82ea-0e165ba57eaa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8050",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"detail",
+						"119ebe9f-9c02-4a8b-82ea-0e165ba57eaa"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
