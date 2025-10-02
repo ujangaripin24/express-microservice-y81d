@@ -182,6 +182,32 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "[product-service] get all product",
+			"id": "21807576-7d5b23dc-8a6b-4928-9330-e72943d178fb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8050/api/v1/product/get-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8050",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"get-all"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
