@@ -1,13 +1,20 @@
+# Gunakan base image Node.js
 FROM node:20
 
+# Set working directory
 WORKDIR /app
 
+# Copy package.json dan package-lock.json
 COPY package*.json ./
 
-RUN npm install
+# Install dependencies
+RUN npm install --production
 
+# Copy semua file source
 COPY . .
 
-EXPOSE 8081
+# Expose port internal (misal 8051)
+EXPOSE 8051
 
+# Jalankan aplikasi
 CMD ["npm", "start"]
