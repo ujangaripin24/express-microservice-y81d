@@ -1,20 +1,38 @@
-# Gunakan base image Node.js
-FROM node:20
+# ------------------------
+# Stage 1: Build (pakai babel)
+# ------------------------
+FROM node:20-alpine AS builder
 
-# Set working directory
+# set workdir
 WORKDIR /app
 
-# Copy package.json dan package-lock.json
+# copy package.json dan install dependencies
 COPY package*.json ./
+RUN npm install --production=false
 
-# Install dependencies
-RUN npm install --production
-
-# Copy semua file source
+# copy semua source code
 COPY . .
 
-# Expose port internal (misal 8051)
-EXPOSE 8051
+# build dengan babel (output ke dist/)
+RUN npm run build
 
-# Jalankan aplikasi
-CMD ["npm", "start"]
+
+# ------------------------
+# Stage 2: Production Image
+# ------------------------
+FROM node:20-alpine
+
+WORKDIR /app
+
+# hanya copy package.json & install deps production
+COPY package*.json ./
+RUN npm install --production
+
+# copy hasil build dari stage builder
+COPY --from=builder /app/dist ./dist
+
+# expose port (misalnya 8051 untuk auth-service)
+EXPOSE 8050
+
+# jalankan hasil build
+CMD ["node", "dist/app.js"]
