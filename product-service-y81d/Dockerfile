@@ -1,7 +1,8 @@
 # ------------------------
 # Stage 1: Build (pakai babel)
 # ------------------------
-FROM node:20-alpine AS builder
+# Gunakan base image Node.js
+FROM node:20
 
 # set workdir
 WORKDIR /app

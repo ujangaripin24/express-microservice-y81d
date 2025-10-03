@@ -18,9 +18,9 @@ services:
     ports:
       - "8052:8052"
     environment:
-      - PORT_APP = 8052
-      - JWT_SECRET = rahasia-super
-      - USER_SERVICE_URL = http://user-service-y81d:8051
+      - PORT_APP=8052
+      - JWT_SECRET=rahasia-super
+      - USER_SERVICE_URL=http://user-service-y81d:8051
     depends_on:
       - user-service-y81d
 
@@ -30,12 +30,12 @@ services:
     ports:
       - "8051:8051"
     environment:
-      - PORT_APP = 8051
-      - JWT_SECRET = rahasia-super
-      - DB_USER = root
-      - DB_PASSWORD = 123456789
-      - DB_NAME = express-y81d-user-database
-      - DB_HOST = 127.0.0.1
+      - PORT_APP=8051
+      - JWT_SECRET=rahasia-super
+      - DB_USER=root
+      - DB_PASSWORD=123456789
+      - DB_NAME=express-y81d-user-database
+      - DB_HOST=127.0.0.1
 
   product-service-y81d:
     build: ./product-service-y81d
@@ -43,10 +43,10 @@ services:
     ports:
       - "8053:8053"
     environment:
-      - PORT_APP = 8053
-      - JWT_SECRET = rahasia-super
-      - DB_USER = root
-      - DB_PASSWORD = 123456789
-      - DB_NAME = express-y81d-product-database
-      - DB_HOST = 127.0.0.1
-      - USER_SERVICE_URL = http://user-service-y81d:8051
+      - PORT_APP=8053
+      - JWT_SECRET=rahasia-super
+      - DB_USER=root
+      - DB_PASSWORD=123456789
+      - DB_NAME=express-y81d-product-database
+      - DB_HOST=127.0.0.1
+      - USER_SERVICE_URL=http://user-service-y81d:8051
