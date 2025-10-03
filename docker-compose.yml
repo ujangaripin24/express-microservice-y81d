@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8050:8050"  # hanya gateway yang bisa diakses publik
+    depends_on:
+      - auth-service
+      - user-service
+      - product-service
+
+  auth-service:
+    build: ./auth-service
+    expose:
+      - "8052"       # hanya bisa diakses container lain
+    environment:
+      - PORT=8052
+
+  user-service:
+    build: ./user-service
+    expose:
+      - "8051"
+    environment:
+      - PORT=8051
+
+  product-service:
+    build: ./product-service
+    expose:
+      - "8053"
+    environment:
+      - PORT=8053
