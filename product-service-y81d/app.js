@@ -32,6 +32,7 @@ app.get('/', (req, res) => {
     })
 })
 
+// router product
 app.use("/", productRoutes);
 
 app.use((req, res, next) => {
