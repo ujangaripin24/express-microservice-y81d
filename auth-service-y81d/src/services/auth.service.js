@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const USER_SERVICE_URL = process.env.USER_SERVICE_URL;
-console.log(USER_SERVICE_URL, "link user-service");
 
 export const loginService = async (email, password) => {
     try {
