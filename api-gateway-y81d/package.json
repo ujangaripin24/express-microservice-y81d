@@ -4,8 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "nodemon app.js",
+    "dev": "nodemon app.js",
+    "build": "babel bin -d dist"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +20,11 @@
     "helmet": "^8.1.0",
     "http-proxy-middleware": "^3.0.5",
     "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.4",
+    "@babel/node": "^7.28.0",
+    "@babel/preset-env": "^7.28.3"
   }
 }
