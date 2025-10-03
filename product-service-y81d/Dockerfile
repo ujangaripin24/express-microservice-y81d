@@ -2,7 +2,7 @@
 # Stage 1: Build (pakai babel)
 # ------------------------
 # Gunakan base image Node.js
-FROM node:20
+FROM node:20 AS builder
 
 # set workdir
 WORKDIR /app
