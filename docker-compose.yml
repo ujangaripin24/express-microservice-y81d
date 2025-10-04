@@ -1,32 +1,32 @@
 version: "3.8"
 services:
   api-gateway:
-    build: ./api-gateway-y81d
-    container_name: api-gateway-y81d
+    build: ./api-gateway
+    container_name: api-gateway
     ports:
       - "8050:8050"
     depends_on:
-      - auth-service-y81d
-      - user-service-y81d
-      - product-service-y81d
+      - auth-service
+      - user-service
+      - product-service
     environment:
       - PORT_APP=8050
 
-  auth-service-y81d:
-    build: ./auth-service-y81d
-    container_name: auth-service-y81d
+  auth-service:
+    build: ./auth-service
+    container_name: auth-service
     ports:
       - "8052:8052"
     environment:
       - PORT_APP=8052
       - JWT_SECRET=rahasia-super
-      - USER_SERVICE_URL=http://user-service-y81d:8051
+      - USER_SERVICE_URL=http://user-service:8051
     depends_on:
-      - user-service-y81d
+      - user-service
 
-  user-service-y81d:
-    build: ./user-service-y81d
-    container_name: user-service-y81d
+  user-service:
+    build: ./user-service
+    container_name: user-service
     ports:
       - "8051:8051"
     environment:
@@ -37,9 +37,9 @@ services:
       - DB_NAME=express-y81d-user-database
       - DB_HOST=127.0.0.1
 
-  product-service-y81d:
-    build: ./product-service-y81d
-    container_name: product-service-y81d
+  product-service:
+    build: ./product-service
+    container_name: product-service
     ports:
       - "8053:8053"
     environment:
@@ -49,4 +49,4 @@ services:
       - DB_PASSWORD=123456789
       - DB_NAME=express-y81d-product-database
       - DB_HOST=127.0.0.1
-      - USER_SERVICE_URL=http://user-service-y81d:8051
+      - USER_SERVICE_URL=http://user-service:8051
