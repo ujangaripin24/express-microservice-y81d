@@ -1,4 +1,4 @@
-import db from "../models/index.js";
+import db from "../../models/index.js";
 const {TblProducts} = db;
 import axios from "axios";
 

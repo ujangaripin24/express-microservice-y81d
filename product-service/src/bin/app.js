@@ -7,8 +7,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import { fileURLToPath } from 'url';
-import './config/database.js';
-import productRoutes from "./routes/product.routes.js";
+import '../../config/database.js';
+import productRoutes from "./../routes/product.routes.js";
 dotenv.config();
 
 const app = express();
