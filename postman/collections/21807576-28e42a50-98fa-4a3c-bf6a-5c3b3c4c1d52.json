@@ -251,7 +251,7 @@
 			"response": []
 		},
 		{
-			"name": "[product-service] get detail product Copy",
+			"name": "[product-service] update detail product",
 			"id": "21807576-67897598-eaba-44bf-b2a9-7224b3a9c16d",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
