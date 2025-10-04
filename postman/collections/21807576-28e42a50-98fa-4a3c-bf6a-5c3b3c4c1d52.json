@@ -257,8 +257,17 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"product dari user ke 90 (updated)\",\n    \"price\": \"78200\",\n    \"description\": \"detail product 90\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://localhost:8050/api/v1/product/detail/fafbecb7-999c-4396-8e2e-a216fe7a0f06",
 					"protocol": "http",
