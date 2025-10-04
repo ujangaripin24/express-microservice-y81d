@@ -257,6 +257,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMTE5ZWJlOWYtOWMwMi00YThiLTgyZWEtMGUxNjViYTU3ZWFhIiwiZW1haWwiOiJ1c2VyMDAxQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU5NTcwOTY2LCJleHAiOjE3NTk1NzQ1NjZ9.i4DS7QbONHfcs6K0uyIsApUf0TEpRWzvYduMLBXWsaY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -269,7 +279,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8050/api/v1/product/detail/fafbecb7-999c-4396-8e2e-a216fe7a0f06",
+					"raw": "http://localhost:8050/api/v1/product/update/fafbecb7-999c-4396-8e2e-a216fe7a0f06",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -279,7 +289,7 @@
 						"api",
 						"v1",
 						"product",
-						"detail",
+						"update",
 						"fafbecb7-999c-4396-8e2e-a216fe7a0f06"
 					]
 				}
@@ -315,7 +325,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8050/api/v1/product/delete/8f4d6231-d107-4d47-8b4f-a3b76a5bf1d5",
+					"raw": "http://localhost:8050/api/v1/product/delete/7740c264-fe1b-4248-944f-388080cff6da",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -326,7 +336,7 @@
 						"v1",
 						"product",
 						"delete",
-						"8f4d6231-d107-4d47-8b4f-a3b76a5bf1d5"
+						"7740c264-fe1b-4248-944f-388080cff6da"
 					]
 				}
 			},
