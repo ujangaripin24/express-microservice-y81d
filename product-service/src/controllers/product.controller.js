@@ -1,5 +1,6 @@
 import db from "../../models/index.js";
-const {TblProducts} = db;
+import * as productService from '../service/product.service.js'
+const { TblProducts } = db;
 import axios from "axios";
 
 const USER_SERVICE_URL =
@@ -24,26 +25,20 @@ export const createProduct = async (req, res) => {
 
 export const getProducts = async (req, res) => {
   try {
-    const products = await TblProducts.findAll();
+    const { page, size, search } = req.query;
+    const result = await productService.GetAllProduct({ page, size, search });
+    if (!result.data || result.data.length === 0) {
+      res.status(500).json({ errors: [{ msg: "tidak ada data" }] });
+    }
 
-    const result = await Promise.all(
-      products.map(async (p) => {
-        try {
-          const userRes = await axios.get(`${USER_SERVICE_URL}/detail/${p.user_uuid}`);
-          return {
-            ...p.toJSON(),
-            user: userRes.data,
-          };
-        } catch {
-          return {
-            ...p.toJSON(),
-            user: null,
-          };
-        }
-      })
-    );
-
-    return res.json(result);
+    res.status(200).json({
+      status: 200,
+      data: result.data,
+      size: result.size,
+      page: result.page,
+      totalPage: result.totalPage,
+      totalData: result.totalData
+    })
   } catch (err) {
     return res.status(500).json({ msg: err.message });
   }
