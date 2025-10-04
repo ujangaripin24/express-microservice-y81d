@@ -193,7 +193,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8050/api/v1/product/get-all",
+					"raw": "http://localhost:8050/api/v1/product/get-all?search=&page=1&size=10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -204,6 +204,20 @@
 						"v1",
 						"product",
 						"get-all"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": ""
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
 					]
 				}
 			},
