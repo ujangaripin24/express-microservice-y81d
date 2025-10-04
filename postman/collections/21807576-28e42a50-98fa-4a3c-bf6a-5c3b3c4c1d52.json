@@ -285,6 +285,42 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "[product-service] update detail product Copy",
+			"id": "21807576-5eccc28a-e27b-42f0-bfba-2638144f6f5f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"product dari user ke 90 (updated)\",\n    \"price\": \"78200\",\n    \"description\": \"detail product 90\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8050/api/v1/product/detail/fafbecb7-999c-4396-8e2e-a216fe7a0f06",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8050",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"detail",
+						"fafbecb7-999c-4396-8e2e-a216fe7a0f06"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
