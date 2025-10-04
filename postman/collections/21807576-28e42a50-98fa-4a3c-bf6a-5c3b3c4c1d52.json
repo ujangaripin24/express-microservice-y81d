@@ -150,7 +150,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMTE5ZWJlOWYtOWMwMi00YThiLTgyZWEtMGUxNjViYTU3ZWFhIiwiZW1haWwiOiJ1c2VyMDAxQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU5NDA0MTAyLCJleHAiOjE3NTk0MDc3MDJ9.a88qKTxn6tWoimGA-cwtcJvhOZM-iN_IhWeBi2hvXo8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMTE5ZWJlOWYtOWMwMi00YThiLTgyZWEtMGUxNjViYTU3ZWFhIiwiZW1haWwiOiJ1c2VyMDAxQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU5NTcwOTY2LCJleHAiOjE3NTk1NzQ1NjZ9.i4DS7QbONHfcs6K0uyIsApUf0TEpRWzvYduMLBXWsaY",
 							"type": "string"
 						}
 					]
@@ -159,7 +159,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"product 70\",\n    \"price\": \"78200\",\n    \"description\": \"detail product 70\"\n}",
+					"raw": "{\n    \"name\": \"product dari user ke 90\",\n    \"price\": \"78200\",\n    \"description\": \"detail product 90\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
