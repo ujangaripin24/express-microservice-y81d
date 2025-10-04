@@ -222,6 +222,46 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "[product-service] get all product Copy",
+			"id": "21807576-5cba56b7-6458-4ea9-9b39-fda550ae92f8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8050/api/v1/product/get-all?search=&page=1&size=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8050",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"get-all"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": ""
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
