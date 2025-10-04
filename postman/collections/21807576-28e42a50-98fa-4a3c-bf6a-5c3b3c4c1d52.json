@@ -150,7 +150,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMTE5ZWJlOWYtOWMwMi00YThiLTgyZWEtMGUxNjViYTU3ZWFhIiwiZW1haWwiOiJ1c2VyMDAxQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU5NDA0MTAyLCJleHAiOjE3NTk0MDc3MDJ9.a88qKTxn6tWoimGA-cwtcJvhOZM-iN_IhWeBi2hvXo8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMTE5ZWJlOWYtOWMwMi00YThiLTgyZWEtMGUxNjViYTU3ZWFhIiwiZW1haWwiOiJ1c2VyMDAxQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU5NTcwOTY2LCJleHAiOjE3NTk1NzQ1NjZ9.i4DS7QbONHfcs6K0uyIsApUf0TEpRWzvYduMLBXWsaY",
 							"type": "string"
 						}
 					]
@@ -159,7 +159,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"product 70\",\n    \"price\": \"78200\",\n    \"description\": \"detail product 70\"\n}",
+					"raw": "{\n    \"name\": \"product dari user ke 95\",\n    \"price\": \"78200\",\n    \"description\": \"detail product 90\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -193,7 +193,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8050/api/v1/product/get-all",
+					"raw": "http://localhost:8050/api/v1/product/get-all?search=&page=1&size=10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -204,6 +204,139 @@
 						"v1",
 						"product",
 						"get-all"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": ""
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[product-service] get detail product",
+			"id": "21807576-5cba56b7-6458-4ea9-9b39-fda550ae92f8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8050/api/v1/product/detail/fafbecb7-999c-4396-8e2e-a216fe7a0f06",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8050",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"detail",
+						"fafbecb7-999c-4396-8e2e-a216fe7a0f06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[product-service] update detail product",
+			"id": "21807576-67897598-eaba-44bf-b2a9-7224b3a9c16d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMTE5ZWJlOWYtOWMwMi00YThiLTgyZWEtMGUxNjViYTU3ZWFhIiwiZW1haWwiOiJ1c2VyMDAxQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU5NTcwOTY2LCJleHAiOjE3NTk1NzQ1NjZ9.i4DS7QbONHfcs6K0uyIsApUf0TEpRWzvYduMLBXWsaY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"product dari user ke 90 (updated)\",\n    \"price\": \"78200\",\n    \"description\": \"detail product 90\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8050/api/v1/product/update/fafbecb7-999c-4396-8e2e-a216fe7a0f06",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8050",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"update",
+						"fafbecb7-999c-4396-8e2e-a216fe7a0f06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[product-service] delete detail product",
+			"id": "21807576-5eccc28a-e27b-42f0-bfba-2638144f6f5f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMTE5ZWJlOWYtOWMwMi00YThiLTgyZWEtMGUxNjViYTU3ZWFhIiwiZW1haWwiOiJ1c2VyMDAxQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU5NTcwOTY2LCJleHAiOjE3NTk1NzQ1NjZ9.i4DS7QbONHfcs6K0uyIsApUf0TEpRWzvYduMLBXWsaY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"product dari user ke 90 (updated)\",\n    \"price\": \"78200\",\n    \"description\": \"detail product 90\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8050/api/v1/product/delete/7740c264-fe1b-4248-944f-388080cff6da",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8050",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"delete",
+						"7740c264-fe1b-4248-944f-388080cff6da"
 					]
 				}
 			},
