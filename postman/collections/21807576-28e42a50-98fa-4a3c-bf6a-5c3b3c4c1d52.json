@@ -159,7 +159,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"product dari user ke 90\",\n    \"price\": \"78200\",\n    \"description\": \"detail product 90\"\n}",
+					"raw": "{\n    \"name\": \"product dari user ke 95\",\n    \"price\": \"78200\",\n    \"description\": \"detail product 90\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
