@@ -233,7 +233,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8050/api/v1/product/get-all?search=&page=1&size=10",
+					"raw": "http://localhost:8050/api/v1/product/detail/fafbecb7-999c-4396-8e2e-a216fe7a0f06",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -243,21 +243,35 @@
 						"api",
 						"v1",
 						"product",
-						"get-all"
+						"detail",
+						"fafbecb7-999c-4396-8e2e-a216fe7a0f06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[product-service] get detail product Copy",
+			"id": "21807576-67897598-eaba-44bf-b2a9-7224b3a9c16d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8050/api/v1/product/detail/fafbecb7-999c-4396-8e2e-a216fe7a0f06",
+					"protocol": "http",
+					"host": [
+						"localhost"
 					],
-					"query": [
-						{
-							"key": "search",
-							"value": ""
-						},
-						{
-							"key": "page",
-							"value": "1"
-						},
-						{
-							"key": "size",
-							"value": "10"
-						}
+					"port": "8050",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"detail",
+						"fafbecb7-999c-4396-8e2e-a216fe7a0f06"
 					]
 				}
 			},
