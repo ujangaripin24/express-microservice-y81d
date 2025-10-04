@@ -114,5 +114,5 @@ export const DeleteProduct = async (user_uuid, uuid) => {
   }
 
   await product.destroy();
-  return { msg: "Product deleted" };
+  return product;
 };
