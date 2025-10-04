@@ -24,12 +24,12 @@ export const GetAllProduct = async ({ page = 1, size = 10, search = "" }) => {
   });
 
   const { count, rows: data } = products;
-  await Promise.all(products.rows.map(async (p) => {
+  const rowsWithUsers = await Promise.all(products.rows.map(async (p) => {
     try {
       const userRes = await axios.get(`${USER_SERVICE_URL}/detail/${p.user_uuid}`)
       return {
         ...p.toJSON(),
-        user: userRes.data,
+        user: userRes.data.data,
       }
     } catch {
       return {
@@ -39,10 +39,9 @@ export const GetAllProduct = async ({ page = 1, size = 10, search = "" }) => {
     }
   })
   )
-
   const totalPages = Math.ceil(count / limit);
   return {
-    data,
+    data: rowsWithUsers,
     size: limit,
     page: parseInt(page),
     totalPages,
