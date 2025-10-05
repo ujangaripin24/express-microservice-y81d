@@ -1,39 +1,44 @@
 # ------------------------
-# Stage 1: Build (pakai babel)
+# Stage 1: Builder
 # ------------------------
-# Gunakan base image Node.js
+# Use a specific, stable version of Node.js for consistency
 FROM node:20 AS builder
 
-# set workdir
+# Set the working directory inside the container
 WORKDIR /app
 
-# copy package.json dan install dependencies
+# Copy package.json and package-lock.json first to leverage Docker cache
 COPY package*.json ./
-RUN npm install --production=false
 
-# copy semua source code
+# Install ALL dependencies, including devDependencies, which are needed for Babel
+RUN npm ci
+
+# Copy all application source code
 COPY . .
 
-# build dengan babel (output ke dist/)
+# Run the build. The output will be in /app/dist/bin/app.js
 RUN npm run build
 
 
 # ------------------------
 # Stage 2: Production Image
 # ------------------------
+# Use a slimmed-down base image for a smaller final image size
 FROM node:20-alpine
 
+# Set the working directory
 WORKDIR /app
 
-# hanya copy package.json & install deps production
-COPY package*.json ./
-RUN npm install --production
-
-# copy hasil build dari stage builder
+# Copy the compiled files from the builder stage
 COPY --from=builder /app/dist ./dist
 
-# expose port (misalnya 8051 untuk auth-service)
+# Copy package.json and install ONLY production dependencies
+COPY package*.json ./
+RUN npm ci --omit=dev
+
+# Expose the port your Express app listens on
 EXPOSE 8051
 
-# jalankan hasil build
-CMD ["node", "dist/app.js"]
+# Run the application, specifying the correct entry point
+# Correctly points to the transpiled file inside the bin directory
+CMD ["node", "dist/bin/app.js"]
